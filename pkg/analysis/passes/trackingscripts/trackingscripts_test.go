@@ -4,9 +4,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/modulejs"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/modulejs"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 
@@ -45,5 +45,5 @@ func TestTrackingScriptsInvalid(t *testing.T) {
 	require.NoError(t, err)
 	require.Len(t, interceptor.Diagnostics, 1)
 	require.Equal(t, interceptor.Diagnostics[0].Title, "module.js: should not include tracking scripts")
-	require.Equal(t, interceptor.Diagnostics[0].Detail, "Tracking scripts are not allowed in Grafana plugins (e.g. google analytics). Please remove any usage of tracking code. Found: google-analytics.com")
+	require.Equal(t, interceptor.Diagnostics[0].Detail, "Tracking scripts are not allowed in Khulnasoft plugins (e.g. google analytics). Please remove any usage of tracking code. Found: google-analytics.com")
 }

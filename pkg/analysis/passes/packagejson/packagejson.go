@@ -6,9 +6,9 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/sourcecode"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/sourcecode"
 	"github.com/tailscale/hujson"
 )
 

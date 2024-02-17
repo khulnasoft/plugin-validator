@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/bmatcuk/doublestar/v4"
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
 )
 
 var (
@@ -33,7 +33,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	}
 
 	if len(moduleJsFiles) == 0 {
-		pass.ReportResult(pass.AnalyzerName, missingModulejs, "missing module.js", "Your plugin must have a module.js file to be loaded by Grafana.")
+		pass.ReportResult(pass.AnalyzerName, missingModulejs, "missing module.js", "Your plugin must have a module.js file to be loaded by Khulnasoft.")
 		return nil, nil
 	} else if missingModulejs.ReportAll {
 		missingModulejs.Severity = analysis.OK

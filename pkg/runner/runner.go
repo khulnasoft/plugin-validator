@@ -3,9 +3,9 @@ package runner
 import (
 	"fmt"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/logme"
-	"github.com/grafana/plugin-validator/pkg/utils"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/utils"
 )
 
 type Config struct {

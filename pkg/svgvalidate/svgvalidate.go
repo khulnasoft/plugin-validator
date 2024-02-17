@@ -2,7 +2,7 @@ package svgvalidate
 
 // original source: https://github.com/hamochi/safesvg (MIT License)
 // https://github.com/hamochi/safesvg/blob/ebacb23c39e0a3ab545066adce8a62da063500a0/LICENSE
-// modified by: GrafanaLabs
+// modified by: KhulnasoftLabs
 
 import (
 	"bytes"

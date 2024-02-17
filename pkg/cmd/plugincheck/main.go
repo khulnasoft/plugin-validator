@@ -24,7 +24,7 @@ Y88b 888Y8b.    888 d88P888    Y8b.    Y88b.   888  888Y88b. Y8b.    Y88b 888
 
 	Use V2 instead: plugincheck2
 
-	To install it see README https://github.com/grafana/plugin-validator`)
+	To install it see README https://github.com/khulnasoft/plugin-validator`)
 	fmt.Println()
 
 	if isGithubCi() {
@@ -37,7 +37,7 @@ Y88b 888Y8b.    888 d88P888    Y8b.    Y88b.   888  888Y88b. Y8b.    Y88b 888
 
 		- name: Lint plugin
         run: |
-          git clone https://github.com/grafana/plugin-validator
+          git clone https://github.com/khulnasoft/plugin-validator
           pushd ./plugin-validator/pkg/cmd/plugincheck2
           go install
           popd

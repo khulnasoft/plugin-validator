@@ -22,7 +22,7 @@ type Link struct {
 	Href string `json:"href"`
 }
 
-// Organization maps to a Grafana.com organization.
+// Organization maps to a Khulnasoft.com organization.
 type Organization struct {
 	ID   int64  `json:"id"`
 	Name string `json:"name"`
@@ -111,7 +111,7 @@ func (c *Client) FindOrgBySlug(slug string) (*Organization, error) {
 	return &org, nil
 }
 
-// usernameExists checks whether a username is available on Grafana.com.
+// usernameExists checks whether a username is available on Khulnasoft.com.
 func (c *Client) usernameExists(username string) (bool, error) {
 	body := strings.NewReader(fmt.Sprintf(`{"slug": "%s"}`, username))
 

@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/plugin-validator/pkg/archivetool"
-	"github.com/grafana/plugin-validator/pkg/repotool"
+	"github.com/khulnasoft/plugin-validator/pkg/archivetool"
+	"github.com/khulnasoft/plugin-validator/pkg/repotool"
 )
 
 func getLocalPathFromSourceCodeOption(sourceCodeUri string) (string, func(), error) {

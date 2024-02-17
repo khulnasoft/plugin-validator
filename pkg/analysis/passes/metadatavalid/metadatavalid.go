@@ -7,10 +7,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadataschema"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadataschema"
 	"github.com/xeipuuv/gojsonschema"
 )
 

@@ -4,9 +4,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 
@@ -53,7 +53,7 @@ func TestValidDependencyPatchVersion(t *testing.T) {
 	_, err := Analyzer.Run(pass)
 	require.NoError(t, err)
 	require.Len(t, interceptor.Diagnostics, 1)
-	require.Equal(t, interceptor.Diagnostics[0].Title, "plugin.json: grafanaDependency only targets patch releases of Grafana 9.0")
+	require.Equal(t, interceptor.Diagnostics[0].Title, "plugin.json: grafanaDependency only targets patch releases of Khulnasoft 9.0")
 }
 
 func TestValidDependencyEspecificVersion(t *testing.T) {
@@ -76,5 +76,5 @@ func TestValidDependencyEspecificVersion(t *testing.T) {
 	_, err := Analyzer.Run(pass)
 	require.NoError(t, err)
 	require.Len(t, interceptor.Diagnostics, 1)
-	require.Equal(t, interceptor.Diagnostics[0].Title, "plugin.json: grafanaDependency only targets Grafana 9.0.1")
+	require.Equal(t, interceptor.Diagnostics[0].Title, "plugin.json: grafanaDependency only targets Khulnasoft 9.0.1")
 }

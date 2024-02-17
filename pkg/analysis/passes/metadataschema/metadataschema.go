@@ -4,7 +4,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
 )
 
 var Analyzer = &analysis.Analyzer{

@@ -3,7 +3,7 @@ package analysis
 import (
 	"fmt"
 
-	"github.com/grafana/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
 )
 
 type Severity string

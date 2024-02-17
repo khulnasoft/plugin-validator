@@ -4,15 +4,15 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/readme"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/readme"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 
 func TestTemplateReadme(t *testing.T) {
 	var interceptor testpassinterceptor.TestPassInterceptor
-	readmeContent := []byte(`# Grafana Panel Plugin Template`)
+	readmeContent := []byte(`# Khulnasoft Panel Plugin Template`)
 	pass := &analysis.Pass{
 		RootDir: filepath.Join("./"),
 		ResultOf: map[*analysis.Analyzer]interface{}{
@@ -29,7 +29,7 @@ func TestTemplateReadme(t *testing.T) {
 
 func TestTemplateReadmeLowerCase(t *testing.T) {
 	var interceptor testpassinterceptor.TestPassInterceptor
-	readmeContent := []byte(`# Grafana panel Plugin Template`)
+	readmeContent := []byte(`# Khulnasoft panel Plugin Template`)
 	pass := &analysis.Pass{
 		RootDir: filepath.Join("./"),
 		ResultOf: map[*analysis.Analyzer]interface{}{

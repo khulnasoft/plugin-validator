@@ -1,6 +1,6 @@
 package testpassinterceptor
 
-import "github.com/grafana/plugin-validator/pkg/analysis"
+import "github.com/khulnasoft/plugin-validator/pkg/analysis"
 
 type TestPassInterceptor struct {
 	Diagnostics []*analysis.Diagnostic

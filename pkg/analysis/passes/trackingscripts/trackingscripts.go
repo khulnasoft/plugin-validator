@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/modulejs"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/modulejs"
 )
 
 var (
@@ -38,7 +38,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	for _, content := range moduleJsMap {
 		for _, url := range servers {
 			if len(url) > 0 && bytes.Contains(content, []byte(url)) {
-				pass.ReportResult(pass.AnalyzerName, trackingScripts, "module.js: should not include tracking scripts", fmt.Sprintf("Tracking scripts are not allowed in Grafana plugins (e.g. google analytics). Please remove any usage of tracking code. Found: %s", url))
+				pass.ReportResult(pass.AnalyzerName, trackingScripts, "module.js: should not include tracking scripts", fmt.Sprintf("Tracking scripts are not allowed in Khulnasoft plugins (e.g. google analytics). Please remove any usage of tracking code. Found: %s", url))
 				hasTrackingScripts = true
 				break
 			}

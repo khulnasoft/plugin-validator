@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { useStyles2, useTheme2 } from '@grafana/ui';
 import { css } from '@emotion/css';
-import { getActiveThreshold, GrafanaTheme2, Threshold, sortThresholds } from '@grafana/data';
+import { getActiveThreshold, KhulnasoftTheme2, Threshold, sortThresholds } from '@grafana/data';
 
 import { ExpandedThresholdBand, GaugeOptions, Markers } from './types';
 import { scaleLinear, line, interpolateString, select } from 'd3';
@@ -560,7 +560,7 @@ export const Gauge: React.FC<GaugeOptions> = (options) => {
   );
 };
 
-const getWrapperStyles = (theme: GrafanaTheme2) => css`
+const getWrapperStyles = (theme: KhulnasoftTheme2) => css`
   fill: transparent;
   display: flex;
   align-items: center;
@@ -568,7 +568,7 @@ const getWrapperStyles = (theme: GrafanaTheme2) => css`
   justify-content: center;
 `;
 
-const getSVGStyles = (theme: GrafanaTheme2) => css`
+const getSVGStyles = (theme: KhulnasoftTheme2) => css`
   text-align: center;
   align-items: center;
   justify-content: center;

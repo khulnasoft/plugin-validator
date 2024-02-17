@@ -6,7 +6,7 @@ Hash: SHA512
   "manifestVersion": "2.0.0",
   "signatureType": "grafana",
   "signedByOrg": "grafana",
-  "signedByOrgName": "Grafana Labs",
+  "signedByOrgName": "Khulnasoft Labs",
   "plugin": "grafana-clock-panel",
   "version": "2.1.2",
   "time": 1672825174657,

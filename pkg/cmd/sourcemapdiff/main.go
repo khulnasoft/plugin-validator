@@ -9,9 +9,9 @@ import (
 	"runtime"
 
 	"github.com/fatih/color"
-	"github.com/grafana/plugin-validator/pkg/difftool"
-	"github.com/grafana/plugin-validator/pkg/sourcemap"
-	"github.com/grafana/plugin-validator/pkg/utils"
+	"github.com/khulnasoft/plugin-validator/pkg/difftool"
+	"github.com/khulnasoft/plugin-validator/pkg/sourcemap"
+	"github.com/khulnasoft/plugin-validator/pkg/utils"
 )
 
 var options = map[string]*string{

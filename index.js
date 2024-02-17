@@ -3,7 +3,7 @@ var path = require("path");
 
 var packageInfo = require(path.join(__dirname, "package.json"));
 var version = packageInfo.version;
-var root = `https://github.com/grafana/plugin-validator/releases/download/v${version}`;
+var root = `https://github.com/khulnasoft/plugin-validator/releases/download/v${version}`;
 
 module.exports = binwrap({
   dirname: __dirname,

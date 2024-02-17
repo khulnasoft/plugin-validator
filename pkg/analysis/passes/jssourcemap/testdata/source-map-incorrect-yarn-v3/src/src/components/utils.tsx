@@ -2,7 +2,7 @@
 import React from 'react';
 import { arc, line } from 'd3';
 import { GaugeOptions, MarkerType, Markers } from './types';
-import { GrafanaTheme2 } from '@grafana/data';
+import { KhulnasoftTheme2 } from '@grafana/data';
 
 
 export const dToR = (angleDeg: any) => {
@@ -60,7 +60,7 @@ export const labelYCalc = (position: number, labelFontSize: number, labelStart: 
   return y1;
 };
 
-export const drawBand = (start: number, end: number, color: string, originX: number, originY: number, options: GaugeOptions, theme2: GrafanaTheme2) => {
+export const drawBand = (start: number, end: number, color: string, originX: number, originY: number, options: GaugeOptions, theme2: KhulnasoftTheme2) => {
   if (0 >= end - start) {
     return;
   }
@@ -108,7 +108,7 @@ export const needleCalc = (degree: number, originX: number, originY: number, nee
   return path;
 };
 
-export const createNeedleMarkers = (needleColor: string, theme2: GrafanaTheme2) => {
+export const createNeedleMarkers = (needleColor: string, theme2: KhulnasoftTheme2) => {
   return (
     <defs>
       {Markers.map((item: MarkerType) => {

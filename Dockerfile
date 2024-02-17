@@ -1,7 +1,7 @@
 FROM golang:1.21-alpine as builder
 
-WORKDIR /go/src/github.com/grafana/plugin-validator
-ADD . /go/src/github.com/grafana/plugin-validator
+WORKDIR /go/src/github.com/khulnasoft/plugin-validator
+ADD . /go/src/github.com/khulnasoft/plugin-validator
 
 RUN apk add --no-cache git ca-certificates curl && \
     update-ca-certificates
@@ -11,7 +11,7 @@ RUN git clone https://github.com/magefile/mage --depth 1 && \
     go run bootstrap.go && \
     curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.55.2
 
-RUN cd /go/src/github.com/grafana/plugin-validator && \
+RUN cd /go/src/github.com/khulnasoft/plugin-validator && \
     mage -v build:ci && \
     ls -al bin
 
@@ -26,6 +26,6 @@ RUN curl -sfL https://raw.githubusercontent.com/securego/gosec/master/install.sh
 RUN python3 -m pip install semgrep --ignore-installed
 
 WORKDIR /app
-COPY --from=builder /go/src/github.com/grafana/plugin-validator/bin bin
-COPY --from=builder /go/src/github.com/grafana/plugin-validator/config config
+COPY --from=builder /go/src/github.com/khulnasoft/plugin-validator/bin bin
+COPY --from=builder /go/src/github.com/khulnasoft/plugin-validator/config config
 ENTRYPOINT ["/app/bin/linux_amd64/plugincheck2"]

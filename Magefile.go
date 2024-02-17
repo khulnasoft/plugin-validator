@@ -22,7 +22,7 @@ type Test mg.Namespace
 type Docker mg.Namespace
 type Run mg.Namespace
 
-const imageName = "grafana/plugin-validator-cli"
+const imageName = "khulnasoft/plugin-validator-cli"
 const imageVersion = "v2"
 
 var archTargets = map[string]map[string]string{

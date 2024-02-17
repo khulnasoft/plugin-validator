@@ -8,9 +8,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/readme"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/readme"
 )
 
 var (
@@ -94,7 +94,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 				pass.ReportResult(pass.AnalyzerName, relativeLink, fmt.Sprintf("README.md: Link has absolute path: %s", path), "")
 			}
 		} else {
-			pass.ReportResult(pass.AnalyzerName, relativeLink, fmt.Sprintf("README.md: convert relative link to absolute: %s", path), "README.md contains relative links. These links will not work on the Grafana plugin's catalog. Convert them to absolute links. (starting with https://)")
+			pass.ReportResult(pass.AnalyzerName, relativeLink, fmt.Sprintf("README.md: convert relative link to absolute: %s", path), "README.md contains relative links. These links will not work on the Khulnasoft plugin's catalog. Convert them to absolute links. (starting with https://)")
 		}
 	}
 

@@ -6,12 +6,12 @@ import (
 	"path/filepath"
 
 	"github.com/bmatcuk/doublestar/v4"
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/sourcecode"
-	"github.com/grafana/plugin-validator/pkg/difftool"
-	"github.com/grafana/plugin-validator/pkg/logme"
-	"github.com/grafana/plugin-validator/pkg/utils"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/sourcecode"
+	"github.com/khulnasoft/plugin-validator/pkg/difftool"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/utils"
 )
 
 var (

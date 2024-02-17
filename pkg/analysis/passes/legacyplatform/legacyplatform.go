@@ -4,9 +4,9 @@ import (
 	"bytes"
 	"regexp"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/modulejs"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/published"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/modulejs"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/published"
 )
 
 var (

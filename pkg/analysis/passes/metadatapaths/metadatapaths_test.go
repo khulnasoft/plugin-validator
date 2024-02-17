@@ -5,11 +5,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/logos"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/screenshots"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/logos"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/screenshots"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 

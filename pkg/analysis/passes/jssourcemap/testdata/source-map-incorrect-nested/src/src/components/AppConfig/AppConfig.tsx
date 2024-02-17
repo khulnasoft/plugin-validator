@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Legend, useStyles2 } from '@grafana/ui';
-import { PluginConfigPageProps, AppPluginMeta, PluginMeta, GrafanaTheme2 } from '@grafana/data';
+import { PluginConfigPageProps, AppPluginMeta, PluginMeta, KhulnasoftTheme2 } from '@grafana/data';
 import { getBackendSrv } from '@grafana/runtime';
 import { css } from '@emotion/css';
 import { lastValueFrom } from 'rxjs';
@@ -61,7 +61,7 @@ export const AppConfig = ({ plugin }: AppConfigProps) => {
   );
 };
 
-const getStyles = (theme: GrafanaTheme2) => ({
+const getStyles = (theme: KhulnasoftTheme2) => ({
   colorWeak: css`
     color: ${theme.colors.text.secondary};
   `,

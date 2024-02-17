@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/packagejson"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/published"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/packagejson"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/published"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 
@@ -59,7 +59,7 @@ func TestNewPluginToolkitFoundInScripts(t *testing.T) {
 
 	require.Len(t, interceptor.Diagnostics, 1)
 	require.Equal(t, interceptor.Diagnostics[0].Title, "The plugin is using a legacy builder (grafana-toolkit)")
-	require.Equal(t, interceptor.Diagnostics[0].Detail, "Script `build` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Grafana. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.")
+	require.Equal(t, interceptor.Diagnostics[0].Detail, "Script `build` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Khulnasoft. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.")
 	require.Equal(t, interceptor.Diagnostics[0].Severity, analysis.Error)
 
 }
@@ -91,7 +91,7 @@ func TestExistingPluginToolkitFoundInScripts(t *testing.T) {
 
 	require.Len(t, interceptor.Diagnostics, 1)
 	require.Equal(t, interceptor.Diagnostics[0].Title, "The plugin is using a legacy builder (grafana-toolkit)")
-	require.Equal(t, interceptor.Diagnostics[0].Detail, "Script `build` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Grafana. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.")
+	require.Equal(t, interceptor.Diagnostics[0].Detail, "Script `build` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Khulnasoft. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.")
 	require.Equal(t, interceptor.Diagnostics[0].Severity, analysis.Warning)
 
 }

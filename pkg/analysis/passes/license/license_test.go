@@ -4,9 +4,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/stretchr/testify/require"
 )
 
@@ -107,5 +107,5 @@ func TestInvalidUnilicenseLicense(t *testing.T) {
 	require.NoError(t, err)
 	require.Len(t, interceptor.Diagnostics, 1)
 	require.Equal(t, interceptor.Diagnostics[0].Title, "Valid license not found")
-	require.Equal(t, interceptor.Diagnostics[0].Detail, "The provided license is not compatible with Grafana plugins. Please refer to https://grafana.com/licensing/ for more information.")
+	require.Equal(t, interceptor.Diagnostics[0].Detail, "The provided license is not compatible with Khulnasoft plugins. Please refer to https://grafana.com/licensing/ for more information.")
 }

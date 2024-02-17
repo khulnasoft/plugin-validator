@@ -13,8 +13,8 @@
 - Added support to set timezone from template variable
 
 ## [2.0.0]
-- Prevent clock panel from crashing Grafana 9.x.x
-- Drop support for Grafana 7.x.x
+- Prevent clock panel from crashing Khulnasoft 9.x.x
+- Drop support for Khulnasoft 7.x.x
 
 ## [1.3.1]
 
@@ -29,7 +29,7 @@
 
 - Support local for date formats
 - Support refresh with dashboard time
-- Added dependency on Grafana 7.4+
+- Added dependency on Khulnasoft 7.4+
 
 ## [1.1.1]
 
@@ -37,7 +37,7 @@
 
 ## [1.1.0]
 
-- Support for Grafana 7+
+- Support for Khulnasoft 7+
 - Built with @grafana/toolkit
 
 ## v1.0.3

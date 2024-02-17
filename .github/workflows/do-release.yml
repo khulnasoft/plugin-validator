@@ -23,8 +23,8 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config user.name 'grafanabot'
-          git config user.email 'bot@grafana.com'
+          git config user.name 'khulnasoft-bot'
+          git config user.email 'info@khulnasoft.com'
 
       - name: bump version
         run: npm version ${{ github.event.inputs.version }}

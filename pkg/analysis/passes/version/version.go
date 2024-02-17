@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/published"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/published"
 	"github.com/hashicorp/go-version"
 )
 
@@ -55,13 +55,13 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	}
 
 	grafanaComVersion := pluginStatus.Version
-	parsedGrafanaVersion, err := version.NewVersion(grafanaComVersion)
+	parsedKhulnasoftVersion, err := version.NewVersion(grafanaComVersion)
 	if err != nil {
 		// in case of any error parsing the online status, skip this check
 		return nil, nil
 	}
 
-	if !parsedSubmissionVersion.GreaterThan(parsedGrafanaVersion) {
+	if !parsedSubmissionVersion.GreaterThan(parsedKhulnasoftVersion) {
 		pass.ReportResult(pass.AnalyzerName,
 			wrongPluginVersion,
 			fmt.Sprintf("Plugin version %s is invalid.", pluginSubmissionVersion),

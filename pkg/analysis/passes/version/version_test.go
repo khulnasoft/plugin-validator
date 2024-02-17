@@ -6,17 +6,17 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/published"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/published"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/jarcoal/httpmock"
 	"github.com/stretchr/testify/require"
 )
 
 const testPluginId = "test-plugin-panel"
 
-func setupTestAnalyzer(pluginSubmissionVersion string, pluginGrafanaComVersion string) (*analysis.Pass, *testpassinterceptor.TestPassInterceptor) {
+func setupTestAnalyzer(pluginSubmissionVersion string, pluginKhulnasoftComVersion string) (*analysis.Pass, *testpassinterceptor.TestPassInterceptor) {
 	var interceptor testpassinterceptor.TestPassInterceptor
 
 	pluginJsonContent := []byte(`{
@@ -30,11 +30,11 @@ func setupTestAnalyzer(pluginSubmissionVersion string, pluginGrafanaComVersion s
 
 	var pluginStatus *published.PluginStatus
 
-	if pluginGrafanaComVersion != "" {
+	if pluginKhulnasoftComVersion != "" {
 		pluginStatus = &published.PluginStatus{
 			Status:  "active",
 			Slug:    testPluginId,
-			Version: pluginGrafanaComVersion,
+			Version: pluginKhulnasoftComVersion,
 		}
 	} else {
 		pluginStatus = &published.PluginStatus{
@@ -84,8 +84,8 @@ func TestUnpublishedPlugin(t *testing.T) {
 func TestHigherVersion(t *testing.T) {
 
 	pluginSubmissionVersion := "1.0.1" // version in submitted plugin.json
-	pluginGrafanaComVersion := "1.0.0" // version in grafana.com
-	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginGrafanaComVersion)
+	pluginKhulnasoftComVersion := "1.0.0" // version in grafana.com
+	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginKhulnasoftComVersion)
 
 	analyzerResult, err := Analyzer.Run(pass)
 	require.NoError(t, err)
@@ -97,8 +97,8 @@ func TestHigherVersion(t *testing.T) {
 func TestSameVersion(t *testing.T) {
 
 	pluginSubmissionVersion := "1.0.0" // version in submitted plugin.json
-	pluginGrafanaComVersion := "1.0.0" // version in grafana.com
-	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginGrafanaComVersion)
+	pluginKhulnasoftComVersion := "1.0.0" // version in grafana.com
+	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginKhulnasoftComVersion)
 
 	analyzerResult, err := Analyzer.Run(pass)
 	require.NoError(t, err)
@@ -112,8 +112,8 @@ func TestSameVersion(t *testing.T) {
 func TestLowerVersion(t *testing.T) {
 
 	pluginSubmissionVersion := "0.9.6" // version in submitted plugin.json
-	pluginGrafanaComVersion := "1.0.0" // version in grafana.com
-	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginGrafanaComVersion)
+	pluginKhulnasoftComVersion := "1.0.0" // version in grafana.com
+	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginKhulnasoftComVersion)
 
 	analyzerResult, err := Analyzer.Run(pass)
 	require.NoError(t, err)
@@ -127,8 +127,8 @@ func TestLowerVersion(t *testing.T) {
 func TestWrongVersionFormat(t *testing.T) {
 
 	pluginSubmissionVersion := "first-one" // version in submitted plugin.json
-	pluginGrafanaComVersion := "1.0.0"     // version in grafana.com
-	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginGrafanaComVersion)
+	pluginKhulnasoftComVersion := "1.0.0"     // version in grafana.com
+	pass, interceptor := setupTestAnalyzer(pluginSubmissionVersion, pluginKhulnasoftComVersion)
 
 	analyzerResult, err := Analyzer.Run(pass)
 	require.NoError(t, err)

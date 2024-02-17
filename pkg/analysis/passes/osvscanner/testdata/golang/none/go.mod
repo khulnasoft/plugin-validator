@@ -1,4 +1,4 @@
-module github.com/grafana/plugin-validator
+module github.com/khulnasoft/plugin-validator
 
 go 1.19
 

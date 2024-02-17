@@ -1,7 +1,7 @@
 {
-  "name": "@grafana/plugin-validator",
+  "name": "@khulnasoft/plugin-validator",
   "version": "0.7.9",
-  "description": "Grafana Plugin Validator",
+  "description": "Khulnasoft Plugin Validator",
   "main": "index.js",
   "scripts": {
     "install": "binwrap-install",
@@ -11,19 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/grafana/plugin-validator.git"
+    "url": "git+https://github.com/khulnasoft/plugin-validator.git"
   },
   "keywords": [
-    "Grafana",
+    "Khulnasoft",
     "plugins",
     "validator"
   ],
-  "author": "Grafana",
+  "author": "Khulnasoft",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/grafana/plugin-validator/issues"
+    "url": "https://github.com/khulnasoft/plugin-validator/issues"
   },
-  "homepage": "https://github.com/grafana/plugin-validator#readme",
+  "homepage": "https://github.com/khulnasoft/plugin-validator#readme",
   "dependencies": {
     "binwrap": "^0.2.3"
   },

@@ -8,7 +8,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/grafana/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
 )
 
 type GitUrl struct {

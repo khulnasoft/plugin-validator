@@ -1,10 +1,10 @@
-# Grafana Plugin Validator
+# Khulnasoft Plugin Validator
 
-[![License](https://img.shields.io/github/license/grafana/plugin-validator)](LICENSE)
-[![Drone](https://drone.grafana.net/api/badges/grafana/plugin-validator/status.svg)](https://drone.grafana.net/grafana/plugin-validator)
-[![Go Report Card](https://goreportcard.com/badge/github.com/grafana/plugin-validator)](https://goreportcard.com/report/github.com/grafana/plugin-validator)
+[![License](https://img.shields.io/github/license/khulnasoft/plugin-validator)](LICENSE)
+[![Drone](https://drone.grafana.net/api/badges/khulnasoft/plugin-validator/status.svg)](https://drone.grafana.net/khulnasoft/plugin-validator)
+[![Go Report Card](https://goreportcard.com/badge/github.com/khulnasoft/plugin-validator)](https://goreportcard.com/report/github.com/khulnasoft/plugin-validator)
 
-This tool helps speed up the process of publishing plugins to [Grafana.com](https://grafana.com/grafana/plugins/). It runs a series of [analyzers](#analyzers) to ensure plugins are following best practices, checking for security and structural issues, as well as specific requirements related to publishing. A general overview of these requirements can be found here: <https://grafana.com/docs/grafana/latest/developers/plugins/publishing-and-signing-criteria/>.
+This tool helps speed up the process of publishing plugins to [Khulnasoft.com](https://grafana.com/grafana/plugins/). It runs a series of [analyzers](#analyzers) to ensure plugins are following best practices, checking for security and structural issues, as well as specific requirements related to publishing. A general overview of these requirements can be found here: <https://grafana.com/docs/grafana/latest/developers/plugins/publishing-and-signing-criteria/>.
 
 It requires a path to a remote or local ZIP archive of the plugin to be specified, for example:
 
@@ -20,25 +20,25 @@ You can _additionally_ provide a link to the source code for the project with `-
 It is easiest to run the tool using the Docker image as it contains all the [security scanning tools](#security-tools) needed for the full set of analyzers - so you don't need to have these additional tools installed on your system.
 
 ```SHELL
-docker run --pull=always grafana/plugin-validator-cli [options] [path/to/plugin_archive.zip]
+docker run --pull=always khulnasoft/plugin-validator-cli [options] [path/to/plugin_archive.zip]
 ```
 
 #### Example 1 (basic)
 
 ```SHELL
-docker run --pull=always grafana/plugin-validator-cli https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
+docker run --pull=always khulnasoft/plugin-validator-cli https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
 ```
 
 #### Example 2 (specifying source code location)
 
 ```SHELL
-docker run --pull=always grafana/plugin-validator-cli -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
+docker run --pull=always khulnasoft/plugin-validator-cli -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
 ```
 
 ### NPX
 
 ```SHELL
-npx -y @grafana/plugin-validator@latest -sourceCodeUri [options] [path/to/plugin_archive.zip]
+npx -y @khulnasoft/plugin-validator@latest -sourceCodeUri [options] [path/to/plugin_archive.zip]
 ```
 
 ### Locally
@@ -46,7 +46,7 @@ npx -y @grafana/plugin-validator@latest -sourceCodeUri [options] [path/to/plugin
 First you must compile and install it:
 
 ```SHELL
-git clone git@github.com:grafana/plugin-validator.git
+git clone git@github.com:khulnasoft/plugin-validator.git
 cd plugin-validator/pkg/cmd/plugincheck2
 go install
 ```
@@ -65,7 +65,7 @@ You must create a `.zip` archive containing the `dist/` directory but named as y
 PLUGIN_ID=$(grep '"id"' < src/plugin.json | sed -E 's/.*"id" *: *"(.*)".*/\1/')
 cp -r dist "${PLUGIN_ID}"
 zip -qr "${PLUGIN_ID}.zip" "${PLUGIN_ID}"
-npx @grafana/plugin-validator@latest -sourceCodeUri file://. "${PLUGIN_ID}.zip"
+npx @khulnasoft/plugin-validator@latest -sourceCodeUri file://. "${PLUGIN_ID}.zip"
 ```
 
 You can optionally remove the files that were generated:
@@ -92,7 +92,7 @@ Usage plugincheck2:
 
 ### Using a configuration file
 
-You can pass a configuration YAML file to the validator with the `-config` option. Several configuration examples are available to use here: <https://github.com/grafana/plugin-validator/tree/main/config>.
+You can pass a configuration YAML file to the validator with the `-config` option. Several configuration examples are available to use here: <https://github.com/khulnasoft/plugin-validator/tree/main/config>.
 
 #### Enabling and disabling analyzers via config
 
@@ -129,7 +129,7 @@ analyzers:
 
 Severity levels could be: `error`, `warning`, or `ok`.
 
-> Note: Grafana Labs enforces its own configuration for plugins submissions and your own config file can't change these rules.
+> Note: Khulnasoft Labs enforces its own configuration for plugins submissions and your own config file can't change these rules.
 
 ### Source code
 
@@ -156,13 +156,13 @@ You can run the validator in debug mode to get more information about the runnin
 Docker:
 
 ```SHELL
-docker run --pull=always -e DEBUG=1 grafana/plugin-validator-cli -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
+docker run --pull=always -e DEBUG=1 khulnasoft/plugin-validator-cli -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
 ```
 
 NPX:
 
 ```SHELL
-DEBUG=1 npx -y @grafana/plugin-validator@latest -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
+DEBUG=1 npx -y @khulnasoft/plugin-validator@latest -sourceCodeUri https://github.com/grafana/clock-panel/tree/v2.1.2 https://github.com/grafana/clock-panel/releases/download/v2.1.2/grafana-clock-panel-2.1.2.zip
 ```
 
 Locally:
@@ -208,10 +208,10 @@ The tool runs a series of analyzers to ensure submitted plugins are following be
 | module.js (exists) / `modulejs`                   | All plugins require a `module.js` to be loaded.                                                                                     | None                                                                  |
 | Organization (exists) / `org`                     | Verifies the org specified in the plugin ID exists.                                                                               | None                                                                  |
 | Plugin Name formatting / `pluginname`             | Validates the plugin ID used conforms to our naming convention.                                                                   | None                                                                  |
-| Published / `published`                           | Detects whether any version of this plugin exists in the Grafana plugin catalog currently.                                                | None                                                                  |
+| Published / `published`                           | Detects whether any version of this plugin exists in the Khulnasoft plugin catalog currently.                                                | None                                                                  |
 | Readme (exists) / `readme`                        | Ensures a `README.md` file exists within the zip file.                                                                              | None                                                                  |
-| Restrictive Dependency / `restrictivedep`         | Specifies a valid range of Grafana versions that work with this version of the plugin.                                            | None                                                                  |
-| Screenshots / `screenshots`                       | Screenshots are specified in `plugin.json` that will be used in the Grafana plugin catalog.                                                 | None                                                                  |
+| Restrictive Dependency / `restrictivedep`         | Specifies a valid range of Khulnasoft versions that work with this version of the plugin.                                            | None                                                                  |
+| Screenshots / `screenshots`                       | Screenshots are specified in `plugin.json` that will be used in the Khulnasoft plugin catalog.                                                 | None                                                                  |
 | Signature / `signature`                           | Ensures the plugin has a valid signature.                                                                                         | None                                                                  |
 | !Source Code / `sourcecode`                       | A comparison is made between the zip file and the source code to ensure what is released matches the repo associated with it.     | `sourceCodeUri`                                                       |
 | Unique README.md / `templatereadme`               | Ensures the plugin doesn't re-use the template from the `create-plugin` tool.                                                      | None                                                                  |
@@ -309,9 +309,9 @@ global:
 
 - :open_book: Check out our plugin [documentation](https://grafana.com/developers/plugin-tools).
 - :handshake: Join the [community forum](https://community.grafana.com/tag/plugins).
-- :speech_balloon: Chat to us in the Grafana Slack [#plugins channel](https://grafana.slack.com/archives/C3HJV5PNE).
-- :memo: [File an issue](https://github.com/grafana/plugin-validator/issues) for any bugs or feature requests.
+- :speech_balloon: Chat to us in the Khulnasoft Slack [#plugins channel](https://grafana.slack.com/archives/C3HJV5PNE).
+- :memo: [File an issue](https://github.com/khulnasoft/plugin-validator/issues) for any bugs or feature requests.
 
 ## License
 
-Grafana Plugin Validator is distributed under the [Apache 2.0 License](https://github.com/grafana/plugin-validator/blob/master/LICENSE).
+Khulnasoft Plugin Validator is distributed under the [Apache 2.0 License](https://github.com/khulnasoft/plugin-validator/blob/master/LICENSE).

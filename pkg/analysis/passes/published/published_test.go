@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
-	"github.com/grafana/plugin-validator/pkg/testpassinterceptor"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/testpassinterceptor"
 	"github.com/jarcoal/httpmock"
 	"github.com/stretchr/testify/require"
 )
@@ -27,7 +27,7 @@ func getMockVersionResponse(id string, version string) string {
   	"name": "Clock",
   	"description": "Clock panel for grafana",
   	"version": "%s",
-  	"orgName": "Grafana Labs",
+  	"orgName": "Khulnasoft Labs",
   	"orgSlug": "grafana",
   	"orgUrl": "https://grafana.org",
   	"url": "https://github.com/grafana/clock-panel/",
@@ -38,12 +38,12 @@ func getMockVersionResponse(id string, version string) string {
 	return content
 }
 
-func setupTestAnalyzer(pluginGrafanaComVersion string) (*analysis.Pass, *testpassinterceptor.TestPassInterceptor, func()) {
+func setupTestAnalyzer(pluginKhulnasoftComVersion string) (*analysis.Pass, *testpassinterceptor.TestPassInterceptor, func()) {
 	var interceptor testpassinterceptor.TestPassInterceptor
 
 	httpmock.Activate()
 
-	responseContent := getMockVersionResponse(testPluginId, pluginGrafanaComVersion)
+	responseContent := getMockVersionResponse(testPluginId, pluginKhulnasoftComVersion)
 	responseCode := http.StatusOK
 
 	// mock grafana.com response
@@ -56,7 +56,7 @@ func setupTestAnalyzer(pluginGrafanaComVersion string) (*analysis.Pass, *testpas
 		"type": "panel",
 		"executable": "test-plugin-panel",
 		"info": {
-			"version": "` + pluginGrafanaComVersion + `"
+			"version": "` + pluginKhulnasoftComVersion + `"
 		}
 	}`)
 

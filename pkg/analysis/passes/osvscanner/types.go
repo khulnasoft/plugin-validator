@@ -16,7 +16,7 @@ const (
 	SeverityLow      = "LOW"
 )
 
-var GrafanaPackages = map[string]bool{
+var KhulnasoftPackages = map[string]bool{
 	"@grafana/data":    true,
 	"@grafana/e2e":     true,
 	"@grafana/runtime": true,

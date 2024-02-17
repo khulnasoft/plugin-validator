@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/google/osv-scanner/pkg/models"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/osvscanner/lockfile"
-	"github.com/grafana/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/osvscanner/lockfile"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
 )
 
 // FilterOSVResults
@@ -40,7 +40,7 @@ func FilterOSVResults(source models.VulnerabilityResults, lockFile string) model
 	filtered.Results = append(filtered.Results, source.Results[0])
 	// empty the packages
 	filtered.Results[0].Packages = nil
-	cachedPackages, err := CacheGrafanaPackages(parsedPackages)
+	cachedPackages, err := CacheKhulnasoftPackages(parsedPackages)
 	if err != nil {
 		// cache error
 		logme.Errorln("cache failure", err)
@@ -49,7 +49,7 @@ func FilterOSVResults(source models.VulnerabilityResults, lockFile string) model
 	// iterate over the vulnerabilities and match against our list
 	for _, aPackage := range source.Results[0].Packages {
 		packageName := aPackage.Package.Name
-		cacheHit, includedBy := IncludedByGrafanaPackage(packageName, cachedPackages)
+		cacheHit, includedBy := IncludedByKhulnasoftPackage(packageName, cachedPackages)
 		if !cacheHit {
 			//logme.DebugFln("not filtered: %s", packageName)
 			filtered.Results[0].Packages = append(filtered.Results[0].Packages, aPackage)

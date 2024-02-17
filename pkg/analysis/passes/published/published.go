@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
 )
 
 var Analyzer = &analysis.Analyzer{
@@ -38,7 +38,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	// 15 seconds timeout to fetch data from grafana API
 	context, cancelContext := context.WithTimeout(context.Background(), time.Second*15)
 	defer cancelContext()
-	pluginStatus, err := getPluginDataFromGrafanaCom(context, data.ID)
+	pluginStatus, err := getPluginDataFromKhulnasoftCom(context, data.ID)
 	if err != nil {
 		// in case of any error getting the online status, skip this check
 		return &PluginStatus{
@@ -49,7 +49,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	return pluginStatus, nil
 }
 
-func getPluginDataFromGrafanaCom(context context.Context, pluginId string) (*PluginStatus, error) {
+func getPluginDataFromKhulnasoftCom(context context.Context, pluginId string) (*PluginStatus, error) {
 	pluginUrl := fmt.Sprintf("https://grafana.com/api/plugins/%s?version=latest", pluginId)
 	// fetch content for pluginUrl
 	request, err := http.NewRequestWithContext(context, "GET", pluginUrl, nil)

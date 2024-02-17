@@ -1,7 +1,8 @@
-module github.com/grafana/plugin-validator
+module github.com/khulnasoft/plugin-validator
 
-go 1.21
-toolchain go1.22.0
+go 1.21.5
+
+toolchain go1.21.7
 
 require (
 	github.com/bmatcuk/doublestar/v4 v4.6.1
@@ -79,7 +80,7 @@ require (
 	github.com/xeipuuv/gojsonreference v0.0.0-20180127040603-bd5ef7bd5415 // indirect
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/net v0.20.0 // indirect
-	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.17.0 // indirect
 	gonum.org/v1/gonum v0.14.0 // indirect

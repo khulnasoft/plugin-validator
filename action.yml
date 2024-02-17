@@ -1,5 +1,5 @@
-name: 'Grafana Plugin Validator'
-description: 'A tool for validating community plugins for publishing to Grafana.com.'
+name: 'Khulnasoft Plugin Validator'
+description: 'A tool for validating community plugins for publishing to Khulnasoft.com.'
 inputs:
   config:
     description: 'Path to configuration file'

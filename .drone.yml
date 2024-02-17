@@ -8,7 +8,7 @@ steps:
       dry_run: true
       password:
         from_secret: docker-hub-password
-      repo: grafana/plugin-validator-cli
+      repo: khulnasoft/plugin-validator-cli
       tags: latest
       username:
         from_secret: docker-hub-username
@@ -31,7 +31,7 @@ steps:
       dry_run: false
       password:
         from_secret: docker-hub-password
-      repo: grafana/plugin-validator-cli
+      repo: khulnasoft/plugin-validator-cli
       tags: latest
       username:
         from_secret: docker-hub-username

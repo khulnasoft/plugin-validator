@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/plugin-validator/pkg/sourcemap"
+	"github.com/khulnasoft/plugin-validator/pkg/sourcemap"
 	godiffpatch "github.com/sourcegraph/go-diff-patch"
 )
 

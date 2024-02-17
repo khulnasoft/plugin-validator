@@ -12,10 +12,10 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/manifest"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/metadata"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/manifest"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/metadata"
 	"golang.org/x/crypto/openpgp"           //nolint:staticcheck
 	"golang.org/x/crypto/openpgp/clearsign" //nolint:staticcheck
 )

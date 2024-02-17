@@ -11,12 +11,12 @@ import (
 
 	"github.com/bmatcuk/doublestar/v4"
 	"github.com/fatih/color"
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes"
-	"github.com/grafana/plugin-validator/pkg/archivetool"
-	"github.com/grafana/plugin-validator/pkg/logme"
-	"github.com/grafana/plugin-validator/pkg/repotool"
-	"github.com/grafana/plugin-validator/pkg/runner"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes"
+	"github.com/khulnasoft/plugin-validator/pkg/archivetool"
+	"github.com/khulnasoft/plugin-validator/pkg/logme"
+	"github.com/khulnasoft/plugin-validator/pkg/repotool"
+	"github.com/khulnasoft/plugin-validator/pkg/runner"
 	yaml "gopkg.in/yaml.v2"
 )
 

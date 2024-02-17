@@ -1,5 +1,5 @@
 import React from 'react';
-import { PanelProps, GrafanaTheme2, FieldDisplay, getDisplayProcessor, getFieldDisplayValues, formattedValueToString, FieldColorModeId, ThresholdsConfig, ThresholdsMode, getActiveThreshold, Threshold, FieldConfig, DisplayValue } from '@grafana/data';
+import { PanelProps, KhulnasoftTheme2, FieldDisplay, getDisplayProcessor, getFieldDisplayValues, formattedValueToString, FieldColorModeId, ThresholdsConfig, ThresholdsMode, getActiveThreshold, Threshold, FieldConfig, DisplayValue } from '@grafana/data';
 import { GaugeOptions } from './types';
 import { Gauge } from './Gauge';
 import { css, cx } from '@emotion/css';
@@ -7,7 +7,7 @@ import { useStyles2, useTheme2 } from '@grafana/ui';
 
 interface Props extends PanelProps<GaugeOptions> { }
 
-const getComponentStyles = (theme: GrafanaTheme2) => {
+const getComponentStyles = (theme: KhulnasoftTheme2) => {
   return {
     wrapper: css`
       position: relative;
@@ -77,7 +77,7 @@ export const GaugePanel: React.FC<Props> = ({ options, data, id, width, height, 
   const getThresholdForValue = (
     field: FieldConfig,
     value: number,
-    theme: GrafanaTheme2) => {
+    theme: KhulnasoftTheme2) => {
 
     if (fieldConfig.defaults.thresholds) {
       const result = getActiveThreshold(value, field.thresholds?.steps);

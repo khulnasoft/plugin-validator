@@ -4,7 +4,7 @@
     "name": "D3 Gauge",
     "id": "briangann-gauge-panel",
     "info": {
-        "description": "D3-based Gauge panel for Grafana",
+        "description": "D3-based Gauge panel for Khulnasoft",
         "author": {
             "name": "Brian Gann (bkgann@gmail.com)",
             "url": "https://github.com/briangann"

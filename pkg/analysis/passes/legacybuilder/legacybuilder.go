@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/packagejson"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/published"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/packagejson"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/published"
 )
 
 var (
@@ -48,7 +48,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 				pass.AnalyzerName,
 				legacyBuilder,
 				"The plugin is using a legacy builder (grafana-toolkit)",
-				fmt.Sprintf("Script `%s` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Grafana. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.", scriptName),
+				fmt.Sprintf("Script `%s` uses grafana-toolkit. Toolkit is deprecated and will not be updated to support new releases of Khulnasoft. Please migrate to create-plugin https://grafana.com/developers/plugin-tools/migration-guides/migrate-from-toolkit.", scriptName),
 			)
 		}
 	}

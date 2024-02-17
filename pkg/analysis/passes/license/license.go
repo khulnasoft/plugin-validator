@@ -7,8 +7,8 @@ import (
 
 	"github.com/go-enry/go-license-detector/v4/licensedb"
 	"github.com/go-enry/go-license-detector/v4/licensedb/filer"
-	"github.com/grafana/plugin-validator/pkg/analysis"
-	"github.com/grafana/plugin-validator/pkg/analysis/passes/archive"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis"
+	"github.com/khulnasoft/plugin-validator/pkg/analysis/passes/archive"
 )
 
 var (
@@ -73,7 +73,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	}
 
 	if !foundLicense {
-		pass.ReportResult(pass.AnalyzerName, licenseNotProvided, "Valid license not found", "The provided license is not compatible with Grafana plugins. Please refer to https://grafana.com/licensing/ for more information.")
+		pass.ReportResult(pass.AnalyzerName, licenseNotProvided, "Valid license not found", "The provided license is not compatible with Khulnasoft plugins. Please refer to https://grafana.com/licensing/ for more information.")
 	} else if licenseNotProvided.ReportAll {
 		licenseNotProvided.Severity = analysis.OK
 		pass.ReportResult(pass.AnalyzerName, licenseNotProvided, "License found", "Found a valid license file inside the plugin archive.")
